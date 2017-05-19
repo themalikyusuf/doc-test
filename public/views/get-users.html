@@ -1,0 +1,14 @@
+<div class="" ng-controller="MainController" data-ng-init="getUsers()">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Docker Rocks</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/get-users">Get Users</a></li>
+      <li><a href="/create-users">Create Users</a></li>
+    </ul>
+  </nav>
+  <ul class="list-group" ng-repeat="user in users">
+    <li class="list-group-item">{{user.username}}</li>
+  </ul>
+</div>

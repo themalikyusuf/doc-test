@@ -20,6 +20,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api', router);
 
+app.get('*', function(req, res) {
+  res.sendfile(__dirname+ '/public/index.html');
+});
+
 app.listen(port);	
 console.log('Magic happens on port ' + port);
 exports = module.exports = app;

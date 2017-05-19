@@ -1,10 +1,18 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope, User) {
+angular.module('MainCtrl', []).controller('MainController', function($scope, $location, User) {
 
-	$scope.tagline = 'To the moon and back!';	
   $scope.getUsers = function() {
     User.getUsers().then(function(res) {
       $scope.users = res.data;
     }, function(err) {
+    });
+  };
+
+  $scope.createUser = function() {
+    User.createUser($scope.user).then(function(res) {
+    	console.log(res)
+      $location.url('/get-users');
+    }, function(err) {
+    	console.log(err)
     });
   };
 
